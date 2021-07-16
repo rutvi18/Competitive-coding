@@ -1,0 +1,17 @@
+The input will be a string A, which will be having only uppercase English letters and will denote a excel sheet column. You have to return the corresponding column number.
+
+
+Example:
+
+Input 1: “AB”
+
+Output: 28
+
+
+Input 2: “A”
+
+Output: 1;
+
+
+Constraints: A will be provided such that the answer will fit in the integer range.
+
