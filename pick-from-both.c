@@ -1,17 +1,28 @@
-int Solution::solve(vector<int> &arr, int B) {
-        int n = arr.size();
-        int sum = 0;
-        int res = 0;
-        for(int i = 0 ; i < B ; i++)
-            res += arr[i];
-            
-        sum = res;
-        for(int i = 0 ; i < B ; i++)
-        {
-            sum -= arr[B-1-i];
-            sum += arr[n-1-i];
-            
-            res = max(res, sum);
-        }
-        return res;
+/**
+ * @input A : Integer array
+ * @input n1 : Integer array's ( A ) length
+ * @input B : Integer
+ * 
+ * @Output Integer
+ */
+int solve(int* A, int n, int B) {
+    int sum = 0;
+    int i = 0;
+    for(i = 0;i<B;i++){
+        sum = sum + A[i];
     }
+    int max = sum;
+    int j = 1;
+    for(i=B-1;i>=0;i--){
+        sum = sum - A[i] + A[n-j];
+        j=j+1;
+        if (sum > max){
+            max = sum;
+        }
+        else{
+            continue;
+        }
+    }
+    return max;
+}
+
