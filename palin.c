@@ -1,18 +1,17 @@
-int Solution::isPalindrome(int A) {
-
-string str=to_string(A);
-
-if(A<0) return false;
-
-else if(A<10)return true;
-
-for(int i=0;i<str.length();i++){
-
-if(str[i]!=str[str.length()-i-1])return false;
-
+/**
+ * @input A : Integer
+ * 
+ * @Output Integer 0 / 1. Return 0 if the number is not palindrome, else return 1
+ */
+int isPalindrome(int A) {
+    int rev = 0, temp = A;
+    
+    while (temp)
+    {
+        rev = rev * 10 + temp % 10;;
+        temp /= 10;
+    }
+    
+    return (A < 0 ? 0 : rev == A);
 }
 
-return true;
-
-
-}
